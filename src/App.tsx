@@ -1,11 +1,9 @@
-import { useChatCompletions } from '@fencyai/react'
+import { useStreamingChatCompletions } from '@fencyai/react'
 import { Response } from './components/ai-elements/response'
 
 function App() {
-    const {
-        latest: { streaming },
-        createStreamingChatCompletion,
-    } = useChatCompletions()
+    const { latest, createStreamingChatCompletion } =
+        useStreamingChatCompletions()
 
     return (
         <div className="w-screen h-screen flex flex-col p-10">
@@ -27,17 +25,15 @@ function App() {
                     }}
                     className="px-4 py-2 rounded-lg"
                 >
-                    {streaming?.loading
+                    {latest?.loading
                         ? 'Streaming...'
                         : 'Create Chat Completion'}
                 </button>
             </div>
 
             <div className="mt-10">
-                {streaming?.loading && <div>Streaming...</div>}
-                {streaming?.response && (
-                    <Response>{streaming.response}</Response>
-                )}
+                {latest?.loading && <div>Streaming...</div>}
+                {latest?.response && <Response>{latest.response}</Response>}
             </div>
         </div>
     )

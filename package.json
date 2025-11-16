@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fencyai/js": "^0.1.70",
-    "@fencyai/react": "^0.1.70",
+    "@fencyai/js": "^0.1.75",
+    "@fencyai/react": "^0.1.75",
     "@tailwindcss/vite": "^4.1.13",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
